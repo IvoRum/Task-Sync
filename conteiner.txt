@@ -2,4 +2,4 @@ Create a Docker container for SQL Server
 
 
 Windows:
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Adam123456" -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Ivo123456" -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
