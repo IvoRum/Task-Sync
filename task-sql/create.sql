@@ -1,7 +1,7 @@
 CREATE DATABASE TASK_SYNC;
 CREATE TABLE Status(
                          id BIGINT NOT NULL,
-                         name BIGINT NOT NULL
+                         name VARCHAR(255) NOT NULL
 );
 ALTER TABLE
     Status ADD CONSTRAINT status_id_primary PRIMARY KEY(id);
