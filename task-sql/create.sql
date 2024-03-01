@@ -36,7 +36,7 @@ CREATE TABLE Task_history(
                                task BIGINT NOT NULL,
                                status BIGINT NOT NULL,
                                worker BIGINT NOT NULL,
-                               time_stamp TIMESTAMP NOT NULL,
+                               time_stamp  DATETIME DEFAULT CURRENT_TIMESTAMP,
                                history_status BIGINT NOT NULL
 );
 ALTER TABLE
@@ -59,11 +59,6 @@ CREATE TABLE Worker_projects(
 );
 
 ALTER TABLE
-    Worker_projects ADD CONSTRAINT worker_id_projects FOREIGN KEY(id_worker) REFERENCES Worker(id);
-ALTER TABLE
-    Worker_projects ADD CONSTRAINT project_id_workers FOREIGN KEY(id_project) REFERENCES Project(id);
-
-ALTER TABLE
     Worker ADD CONSTRAINT worker_id_primary PRIMARY KEY(id);
 ALTER TABLE
     Task_history ADD CONSTRAINT task_history_worker_foreign FOREIGN KEY(worker) REFERENCES Worker(id);
@@ -83,3 +78,7 @@ ALTER TABLE
     Sub_task ADD CONSTRAINT sub_task_id_master_task_foreign FOREIGN KEY(id_master_task) REFERENCES Task(id);
 ALTER TABLE
     Task_history ADD CONSTRAINT task_history_task_foreign FOREIGN KEY(task) REFERENCES Task(id);
+ALTER TABLE
+    Worker_projects ADD CONSTRAINT worker_id_projects FOREIGN KEY(id_worker) REFERENCES Worker(id);
+ALTER TABLE
+    Worker_projects ADD CONSTRAINT project_id_workers FOREIGN KEY(id_project) REFERENCES Project(id);
