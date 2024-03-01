@@ -53,6 +53,16 @@ CREATE TABLE Worker(
                          department BIGINT NOT NULL,
                          position BIGINT NOT NULL
 );
+CREATE TABLE Worker_projects(
+                           id_worker BIGINT NULL,
+                           id_project BIGINT NOT NULL
+);
+
+ALTER TABLE
+    Worker_projects ADD CONSTRAINT worker_id_projects FOREIGN KEY(id_worker) REFERENCES Worker(id);
+ALTER TABLE
+    Worker_projects ADD CONSTRAINT project_id_workers FOREIGN KEY(id_project) REFERENCES Project(id);
+
 ALTER TABLE
     Worker ADD CONSTRAINT worker_id_primary PRIMARY KEY(id);
 ALTER TABLE

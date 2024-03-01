@@ -24,6 +24,19 @@ INSERT INTO Worker(id, name, department, position) VALUES (11,'Olivia',1,5);
 
 Insert Into Project(id, name, manager) VALUES (1,'Bulgerian Trains',1);
 
+Insert Into Worker_projects(id_worker, id_project) values (1,1);
+Insert Into Worker_projects(id_worker, id_project) values (2,1);
+Insert Into Worker_projects(id_worker, id_project) values (3,1);
+Insert Into Worker_projects(id_worker, id_project) values (4,1);
+Insert Into Worker_projects(id_worker, id_project) values (5,1);
+Insert Into Worker_projects(id_worker, id_project) values (6,1);
+Insert Into Worker_projects(id_worker, id_project) values (7,1);
+Insert Into Worker_projects(id_worker, id_project) values (8,1);
+Insert Into Worker_projects(id_worker, id_project) values (9,1);
+Insert Into Worker_projects(id_worker, id_project) values (10,1);
+Insert Into Worker_projects(id_worker, id_project) values (11,1);
+
+
 INSERT INTO Task(id, name, work_time, project, due) VALUES (1,'Creating database',0,1,'2024-03-25');
 INSERT INTO Task(id, name, work_time, project, due) VALUES (2,'Creating creation scripts',0,1,'2024-03-12');
 INSERT INTO Task(id, name, work_time, project, due) VALUES (3,'Creating insertion script',0,1,'2024-03-13');
@@ -71,15 +84,5 @@ Insert Into Task_history(id, task, status, worker, history_status) VALUES (12,12
 Insert Into Task_history(id, task, status, worker, history_status) VALUES (13,13,1,11,1);
 Insert Into Task_history(id, task, status, worker, history_status) VALUES (14,14,1,2,1);
 
-/*
-    Get All unfinished tasks
-*/
 
-Select t.name as taskName, t.due as dueDate, w.name as workerName, s.name as status from Sub_task st
-         inner join Task t on st.id_sub_task=t.id
-         inner join Task_history th on th.task=t.id
-         inner join Worker w on w.id = th.worker
-         inner join Status s on s.id=th.status
-where st.id_master_task=1
-and th.status !=4
 
