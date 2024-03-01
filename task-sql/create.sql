@@ -36,6 +36,7 @@ CREATE TABLE Task_history(
                                task BIGINT NOT NULL,
                                status BIGINT NOT NULL,
                                worker BIGINT NOT NULL,
+                               manager BIGINT NOT NULL,
                                time_stamp  DATETIME DEFAULT CURRENT_TIMESTAMP,
                                history_status BIGINT NOT NULL
 );
@@ -62,6 +63,8 @@ ALTER TABLE
     Worker ADD CONSTRAINT worker_id_primary PRIMARY KEY(id);
 ALTER TABLE
     Task_history ADD CONSTRAINT task_history_worker_foreign FOREIGN KEY(worker) REFERENCES Worker(id);
+ALTER TABLE
+    Task_history ADD CONSTRAINT task_history_manager_foreign FOREIGN KEY(manager) REFERENCES Worker(id);
 ALTER TABLE
     Task_history ADD CONSTRAINT task_history_status_foreign FOREIGN KEY(status) REFERENCES Status(id);
 ALTER TABLE
