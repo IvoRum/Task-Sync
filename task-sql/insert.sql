@@ -1,4 +1,4 @@
-select * from TASK_SYNC.dbo.Department
+select * from TASK_SYNC.dbo.Task
 INSERT INTO Department(id, name) VALUES (1,'Development');
 INSERT INTO Department(id, name) VALUES (2,'Marketing');
 INSERT INTO Department(id, name) VALUES (3,'Human Resources');
@@ -53,8 +53,33 @@ Insert Into Task_history(id, task, status, worker, history_status) VALUES (3,3,1
 Insert Into Task_history(id, task, status, worker, history_status) VALUES (4,4,1,7,1);
 Insert Into Task_history(id, task, status, worker, history_status) VALUES (5,5,1,6,1);
 Insert Into Task_history(id, task, status, worker, history_status) VALUES (6,6,1,7,1);
-Insert Into Task_history(id, task, status, worker, history_status) VALUES (6,6,1,11,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (7,7,1,11,1);
 
+INSERT INTO Task(id, name, work_time, project, due) VALUES (8,'Creating log in Endpoint',0,1,'2024-03-25');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (9,'Creating register in Endpoint',0,1,'2024-03-12');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (10,'Creating web UI',0,1,'2024-03-13');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (11,'Test log in Endpoint',0,1,'2024-03-14');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (12,'Test register Endpoint',0,1,'2024-03-15');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (13,'Test web UI',0,1,'2024-03-16');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (14,'Deploy to server',0,1,'2024-04-01');
 
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (8,8,1,6,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (9,9,1,5,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (10,10,1,5,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (11,11,1,10,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (12,12,1,10,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (13,13,1,11,1);
+Insert Into Task_history(id, task, status, worker, history_status) VALUES (14,14,1,2,1);
 
+/*
+    Get All unfinished tasks
+*/
+
+Select t.name as taskName, t.due as dueDate, w.name as workerName, s.name as status from Sub_task st
+         inner join Task t on st.id_sub_task=t.id
+         inner join Task_history th on th.task=t.id
+         inner join Worker w on w.id = th.worker
+         inner join Status s on s.id=th.status
+where st.id_master_task=1
+and th.status !=4
 
