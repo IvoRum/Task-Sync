@@ -42,8 +42,8 @@ end;
 
     UPDATE Task_history
     set status=4
-    where task = 2
-      and id = 2;
+    where task = 4
+      and id = 4;
 
     select *
     from Task_history

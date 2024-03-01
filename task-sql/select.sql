@@ -65,3 +65,23 @@ begin
     select @startDate as theDate;
 
 end
+
+
+/*
+    Otcheti
+ */
+
+select SUM(t.work_time) as task_worked_time from Task t
+    inner join Project p on t.project=p.id
+where p.id=1;
+
+
+select (SUM(t.work_time)/COUNT(t.id)) as avarage_task_worked_time from Task_history th
+    inner join Task t on t.id=th.task
+    inner join Project p on t.project=p.id
+where th.worker=1
+and history_status!=0;
+
+select count(t.id) as all_sub_tasks from Sub_task st
+inner join Task t on t.id=st.id_sub_task
+where st.id_master_task=1;
