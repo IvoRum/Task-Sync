@@ -90,3 +90,9 @@ where st.id_master_task=1;
  */
 select * from Status
 
+Select t.name as taskName, t.due as taskDueDate, w.name as workerName, s.name as taskStatus
+from  Task t
+         inner join Task_history th on th.task = t.id
+         left join Worker w on w.id = th.worker
+         inner join Status s on s.id = th.status
+where t.project=1 and th.status != 4
