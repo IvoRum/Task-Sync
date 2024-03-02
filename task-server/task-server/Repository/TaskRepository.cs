@@ -11,9 +11,6 @@ public class TaskRepository
     public List<TaskDTO> GetAllUnfinishedSubtasks(int masterTask)
     {
         List<TaskDTO> foundStatus = new List<TaskDTO>();
-        SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder();
-
-
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
@@ -57,9 +54,6 @@ public class TaskRepository
     public List<TaskDTO> GetAllTasksForAProjectWitchArenNotDone(int projectId)
     {
         List<TaskDTO> foundStatus = new List<TaskDTO>();
-        SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder();
-
-
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
@@ -99,12 +93,8 @@ public class TaskRepository
         return foundStatus;
     }
     
-    public List<TaskDTO> GetTasksById(int taskId)
+    public TaskDTO GetTasksById(int taskId)
     {
-        List<TaskDTO> foundStatus = new List<TaskDTO>();
-        SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder();
-
-
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             try
@@ -129,7 +119,7 @@ public class TaskRepository
                             string workerName = reader["workerName"].ToString();
                             string taskStatus = reader["taskStatus"].ToString();
                             
-                            foundStatus.Add(new TaskDTO(taskName, taskDueDate, workerName, taskStatus));
+                            return new TaskDTO(taskName, taskDueDate, workerName, taskStatus);
                         }
                     }
                 }
@@ -140,6 +130,6 @@ public class TaskRepository
             }
         }
 
-        return foundStatus;
+        return null;
     }
 }

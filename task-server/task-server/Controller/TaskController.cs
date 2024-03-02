@@ -24,7 +24,7 @@ namespace task_server.Controller
         }
         
         [HttpGet("/Task/{taskId}")]
-        public ActionResult<List<TaskDTO>> GetTaskDetails(int taskId)
+        public ActionResult<TaskDTO> GetTaskDetails(int taskId)
         {
             TaskRepository workerRepository=new TaskRepository() ;
             return workerRepository.GetTasksById(taskId);
