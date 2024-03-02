@@ -85,5 +85,8 @@ and history_status!=0;
 select count(t.id) as all_sub_tasks from Sub_task st
 inner join Task t on t.id=st.id_sub_task
 where st.id_master_task=1;
-
+/*
+    Repository selects
+ */
 select * from Status
+

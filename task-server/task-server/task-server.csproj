@@ -27,6 +27,7 @@
 
     <ItemGroup>
       <Folder Include="Controller\" />
+      <Folder Include="Service\" />
     </ItemGroup>
 
 </Project>
