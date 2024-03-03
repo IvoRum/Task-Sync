@@ -9,9 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectService {
   constructor(private http: HttpClient) {}
 
-  fetchProjectForWorker(projectId: number): Observable<ProjectDTO[]> {
+  fetchProjectForWorker(): Observable<ProjectDTO[]> {
     return this.http.get<ProjectDTO[]>(
-      `https://localhost:7012/project/worker/` + projectId
+      `https://localhost:7012/project/worker/` +
+        localStorage.getItem('workerID')
     );
   }
 }

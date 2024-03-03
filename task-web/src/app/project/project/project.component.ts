@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrl: './project.component.css'
+  styleUrl: './project.component.css',
 })
 export class ProjectComponent {
-
+  constructor() {
+    localStorage.setItem('workerID', '1');
+  }
 }
