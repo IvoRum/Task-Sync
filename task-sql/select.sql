@@ -96,3 +96,10 @@ from  Task t
          left join Worker w on w.id = th.worker
          inner join Status s on s.id = th.status
 where t.project=1 and th.status != 4
+
+SELECT p.id,p.name,p.manager from Project p
+where p.id=1;
+
+SELECT p.id,p.name,p.manager from Project p
+        join Worker_projects wp on wp.id_project=p.id
+where wp.id_worker=1
