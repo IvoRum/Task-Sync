@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ProjectComponent,
   },
   {
-    path: './project/:projectId',
+    path: 'project/:projectId',
     component: ProjectPageComponent,
   },
   { path: '**', redirectTo: '' },

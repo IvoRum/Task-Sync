@@ -21,10 +21,12 @@ export class ProjectComponent implements OnInit {
     console.log(localStorage.getItem('workerID'));
   }
 
-  goProject(itemId: any) {
+  goProject(projectId: any) {
     //this.router.navigate(['/profile/1']);
     // Pass along the hero id if available
     // so that the HeroList component can select that item.
-    this.router.navigate(['/profile', { id: itemId }]);
+    console.log('klick');
+    this.router.navigate(['profile', projectId]);
+    this.router.navigate(['profile/1']);
   }
 }
