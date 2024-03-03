@@ -1,7 +1,10 @@
 <div class="box">
   <div class="projects">
+    Your Projects:<br />
     <div *ngFor="let item of projects">
-      {{ item.projectId }}; {{ item.name }}
+      <div (click)="goProject(item.projectId)">
+        {{ item.projectId }}; {{ item.name }}
+      </div>
     </div>
   </div>
 </div>

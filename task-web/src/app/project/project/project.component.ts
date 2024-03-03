@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../service/project/project.service';
 import { ProjectDTO } from '../../model/ProjecrDTO';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project',
@@ -9,7 +10,7 @@ import { ProjectDTO } from '../../model/ProjecrDTO';
 })
 export class ProjectComponent implements OnInit {
   projects!: ProjectDTO[];
-  constructor(private dataService: ProjectService) {
+  constructor(private dataService: ProjectService, private router: Router) {
     localStorage.setItem('workerID', '1');
   }
 
@@ -18,5 +19,12 @@ export class ProjectComponent implements OnInit {
       this.projects = data;
     });
     console.log(localStorage.getItem('workerID'));
+  }
+
+  goProject(itemId: any) {
+    //this.router.navigate(['/profile/1']);
+    // Pass along the hero id if available
+    // so that the HeroList component can select that item.
+    this.router.navigate(['/profile', { id: itemId }]);
   }
 }
