@@ -11,8 +11,7 @@ export class ProjectService {
 
   fetchProjectForWorker(): Observable<ProjectDTO[]> {
     return this.http.get<ProjectDTO[]>(
-      `https://localhost:7012/project/worker/` +
-        localStorage.getItem('workerID')
+      `https://localhost:7012/project/worker/1`
     );
   }
 }

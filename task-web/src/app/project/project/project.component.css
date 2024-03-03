@@ -1,0 +1,9 @@
+.projects {
+  display: flex;
+  justify-content: center;
+  margin: 25%;
+  border: solid;
+}
+
+.box {
+}

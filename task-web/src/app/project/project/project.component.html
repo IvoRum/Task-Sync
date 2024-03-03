@@ -1,1 +1,7 @@
-<p>project works!</p>
+<div class="box">
+  <div class="projects">
+    <div *ngFor="let item of projects">
+      {{ item.projectId }}; {{ item.name }}
+    </div>
+  </div>
+</div>

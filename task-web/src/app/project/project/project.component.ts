@@ -14,8 +14,9 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dataService.fetchProjectForWorker.call((data: ProjectDTO[]) => {
+    this.dataService.fetchProjectForWorker().subscribe((data: ProjectDTO[]) => {
       this.projects = data;
     });
+    console.log(localStorage.getItem('workerID'));
   }
 }
