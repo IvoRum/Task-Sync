@@ -2,17 +2,25 @@
 
 public class TaskDTO
 {
+    private long id;
     private string taskName;
     private DateTime due;
     private string workerName;
     private string taskStatus;
 
-    public TaskDTO(string taskName, DateTime due, string workerName, string taskStatus)
+    public TaskDTO(long id,string taskName, DateTime due, string workerName, string taskStatus)
     {
+        this.id = id;
         this.taskName = taskName;
         this.due = due;
         this.workerName = workerName;
         this.taskStatus = taskStatus;
+    }
+
+    public long Id
+    {
+        get => id;
+        set => id = value;
     }
 
     public string TaskName

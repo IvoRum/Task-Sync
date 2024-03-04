@@ -1,6 +1,7 @@
 export interface TaskDTO {
+  id: number;
   taskName: string;
-  dueData: Date;
+  due: Date;
   workerName: string | undefined;
   taskStatus: string;
 }

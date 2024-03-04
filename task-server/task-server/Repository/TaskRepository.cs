@@ -16,7 +16,7 @@ public class TaskRepository
             try
             {
                 String sql =
-                    "Select t.name as taskName, t.due as taskDueDate, " +
+                    "Select t.id, t.name as taskName, t.due as taskDueDate, " +
                     "w.name as workerName, s.name as taskStatus " +
                     "from Sub_task st" +
                     "         inner join Task t on st.id_sub_task = t.id" +
@@ -32,12 +32,13 @@ public class TaskRepository
                     {
                         while (reader.Read())
                         {
+                            long id=reader.GetInt64(reader.GetOrdinal("id"));
                             string taskName = reader["taskName"].ToString();
                             DateTime taskDueDate = reader.GetDateTime(reader.GetOrdinal("taskDueDate"));
                             string workerName = reader["workerName"].ToString();
                             string taskStatus = reader["taskStatus"].ToString();
                             
-                            foundStatus.Add(new TaskDTO(taskName, taskDueDate, workerName, taskStatus));
+                            foundStatus.Add(new TaskDTO(id,taskName, taskDueDate, workerName, taskStatus));
                         }
                     }
                 }
@@ -59,7 +60,7 @@ public class TaskRepository
             try
             {
                 String sql =
-                    "Select t.name as taskName, t.due as taskDueDate, " +
+                    "Select t.id,t.name as taskName, t.due as taskDueDate, " +
                     "w.name as workerName, s.name as taskStatus " +
                     "from  Task t" +
                     "         inner join Task_history th on th.task = t.id" +
@@ -74,12 +75,13 @@ public class TaskRepository
                     {
                         while (reader.Read())
                         {
+                            long id=reader.GetInt64(reader.GetOrdinal("id"));
                             string taskName = reader["taskName"].ToString();
                             DateTime taskDueDate = reader.GetDateTime(reader.GetOrdinal("taskDueDate"));
                             string workerName = reader["workerName"].ToString();
                             string taskStatus = reader["taskStatus"].ToString();
                             
-                            foundStatus.Add(new TaskDTO(taskName, taskDueDate, workerName, taskStatus));
+                            foundStatus.Add(new TaskDTO(id,taskName, taskDueDate, workerName, taskStatus));
                         }
                     }
                 }
@@ -100,7 +102,7 @@ public class TaskRepository
             try
             {
                 String sql =
-                    "Select t.name as taskName, t.due as taskDueDate, " +
+                    "Select t.id, t.name as taskName, t.due as taskDueDate, " +
                     "w.name as workerName, s.name as taskStatus " +
                     "from  Task t" +
                     "         inner join Task_history th on th.task = t.id" +
@@ -114,12 +116,13 @@ public class TaskRepository
                     {
                         while (reader.Read())
                         {
+                            long id=reader.GetInt64(reader.GetOrdinal("id"));
                             string taskName = reader["taskName"].ToString();
                             DateTime taskDueDate = reader.GetDateTime(reader.GetOrdinal("taskDueDate"));
                             string workerName = reader["workerName"].ToString();
                             string taskStatus = reader["taskStatus"].ToString();
                             
-                            return new TaskDTO(taskName, taskDueDate, workerName, taskStatus);
+                            return new TaskDTO(id,taskName, taskDueDate, workerName, taskStatus);
                         }
                     }
                 }

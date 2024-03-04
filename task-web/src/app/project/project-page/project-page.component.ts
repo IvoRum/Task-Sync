@@ -4,6 +4,8 @@ import { ProjectDTO } from '../../model/ProjecrDTO';
 import { ProjectService } from '../../service/project/project.service';
 import { WorkerService } from '../../service/worker/worker.service';
 import { WorkerDTO } from '../../model/WorkerDTO';
+import { TaskService } from '../../service/task/task.service';
+import { TaskDTO } from '../../model/TaskDTO';
 
 @Component({
   selector: 'app-project-page',
@@ -12,14 +14,15 @@ import { WorkerDTO } from '../../model/WorkerDTO';
 })
 export class ProjectPageComponent {
   projectId!: number;
-  projects!: ProjectDTO[];
   coworkers!: WorkerDTO[];
   worker!: WorkerDTO;
+  projectTasks!: TaskDTO[];
+  task!: TaskDTO;
 
   constructor(
     private route: ActivatedRoute,
-    private projectService: ProjectService,
     private workerService: WorkerService,
+    private taskService: TaskService,
     private router: Router
   ) {
     this.route.params.subscribe((params) => {
@@ -28,11 +31,6 @@ export class ProjectPageComponent {
   }
 
   ngOnInit(): void {
-    this.projectService
-      .fetchProjectForWorker()
-      .subscribe((data: ProjectDTO[]) => {
-        this.projects = data;
-      });
     this.workerService
       .fetchAllWorkersInPorject(this.projectId)
       .subscribe((data: WorkerDTO[]) => {
@@ -43,5 +41,19 @@ export class ProjectPageComponent {
       .subscribe((data: WorkerDTO) => {
         this.worker = data;
       });
+    this.taskService
+      .fetchTasksForAPRoject(this.projectId)
+      .subscribe((data: TaskDTO[]) => {
+        this.projectTasks = data;
+      });
+  }
+
+  onTaskUpdate(taskId: number) {
+    this.taskService.fetchTask(taskId).subscribe((data: TaskDTO) => {
+      this.task = data;
+    });
+    console.log(taskId);
+    console.log('klickm');
+    console.log(this.task);
   }
 }
