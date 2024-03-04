@@ -84,5 +84,65 @@ Insert Into Task_history(id, task, status, worker, manager, history_status) VALU
 Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (13,13,1,11,4,1);
 Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (14,14,1,2,4,1);
 
+/*
+    Second project
+*/
 
 
+INSERT INTO Worker(id, name, department, position) VALUES (12,'Iliqna',1,2);
+INSERT INTO Worker(id, name, department, position) VALUES (13,'Koka',1,2);
+INSERT INTO Worker(id, name, department, position) VALUES (14,'Plamena',1,2);
+INSERT INTO Worker(id, name, department, position) VALUES (15,'Qno',1,3);
+INSERT INTO Worker(id, name, department, position) VALUES (16,'Jordana',1,3);
+INSERT INTO Worker(id, name, department, position) VALUES (17,'Jhona',1,3);
+INSERT INTO Worker(id, name, department, position) VALUES (18,'Jhoan',1,4);
+INSERT INTO Worker(id, name, department, position) VALUES (19,'Emmo',1,4);
+INSERT INTO Worker(id, name, department, position) VALUES (20,'Luno',1,5);
+INSERT INTO Worker(id, name, department, position) VALUES (21,'Oliv',1,5);
+
+Insert Into Project(id, name, manager) VALUES (2,'Fitnnes application',12);
+
+Insert Into Worker_projects(id_worker, id_project) values (12,2);
+Insert Into Worker_projects(id_worker, id_project) values (13,2);
+Insert Into Worker_projects(id_worker, id_project) values (14,2);
+Insert Into Worker_projects(id_worker, id_project) values (15,2);
+Insert Into Worker_projects(id_worker, id_project) values (16,2);
+Insert Into Worker_projects(id_worker, id_project) values (17,2);
+Insert Into Worker_projects(id_worker, id_project) values (18,2);
+Insert Into Worker_projects(id_worker, id_project) values (19,2);
+Insert Into Worker_projects(id_worker, id_project) values (20,2);
+Insert Into Worker_projects(id_worker, id_project) values (21,2);
+
+INSERT INTO Task(id, name, work_time, project, due) VALUES (15,'Creating runners routine',0,2,'2024-03-25');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (16,'Set up running track',0,2,'2024-03-12');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (17,'Set up looker room',0,2,'2024-03-13');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (18,'Clean out gum',0,2,'2024-03-14');
+
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (15,16);
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (15,17);
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (15,18);
+
+INSERT INTO Task(id, name, work_time, project, due) VALUES (19,'Creating lifter routine',0,2,'2024-03-15');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (20,'Set up dumbbells',0,2,'2024-03-16');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (21,'Set up barbell',0,2,'2024-03-24');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (22,'Set up roll machine',0,2,'2024-03-16');
+INSERT INTO Task(id, name, work_time, project, due) VALUES (23,'Set squat rack',0,2,'2024-03-24');
+
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (19,20);
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (19,21);
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (19,22);
+INSERT INTO Sub_task(id_master_task, id_sub_task) VALUES (19,23);
+
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (15,15,1,14,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (16,16,1,15,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (17,17,1,16,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (18,18,1,14,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (19,19,1,15,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (20,20,1,18,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (21,21,1,13,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (22,22,1,19,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (23,23,1,20,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (24,23,2,20,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (25,23,3,20,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (26,22,2,20,2,1);
+Insert Into Task_history(id, task, status, worker, manager, history_status) VALUES (27,23,3,15,2,1);

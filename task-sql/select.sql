@@ -116,7 +116,7 @@ from Worker w
          inner join Worker_projects wp on wp.id_worker = w.id
          inner join Department d on d.id = w.department
          inner join Position p on p.id = w.position
-where wp.id_project = 1
+where wp.id_project = 2
 
 select w.id ,w.name, p.name as position, d.name as department
 from Worker w
