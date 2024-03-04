@@ -3,7 +3,7 @@
     Your Projects:<br />
     <div *ngFor="let item of projects">
       <div (click)="goProject(item.projectId)">
-        {{ item.projectId }}; {{ item.name }}
+        <a> {{ item.projectId }}; {{ item.name }}</a>
       </div>
     </div>
   </div>

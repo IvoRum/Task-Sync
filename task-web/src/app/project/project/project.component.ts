@@ -22,11 +22,7 @@ export class ProjectComponent implements OnInit {
   }
 
   goProject(projectId: any) {
-    //this.router.navigate(['/profile/1']);
-    // Pass along the hero id if available
-    // so that the HeroList component can select that item.
-    console.log('klick');
-    this.router.navigate(['profile', projectId]);
-    this.router.navigate(['profile/1']);
+    this.router.navigate(['/project/', projectId]);
+    //this.router.navigate(['/project/' + projectId]);
   }
 }

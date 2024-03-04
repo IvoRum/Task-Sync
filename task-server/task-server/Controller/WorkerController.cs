@@ -16,7 +16,7 @@ namespace task_server.Controller
             return workerRepository.GetWorkersByProject(projectId);
         }
         
-        [HttpGet("/project/worker/{workerId}")]
+        [HttpGet("/worker/{workerId}")]
         public ActionResult<Worker> GetAllWorker(int workerId)
         {
             WorkerRepository workerRepository=new WorkerRepository();
