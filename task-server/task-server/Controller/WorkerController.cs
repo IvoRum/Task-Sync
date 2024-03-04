@@ -9,10 +9,18 @@ namespace task_server.Controller
     [ApiController]
     public class WorkerController : ControllerBase
     {
-        [HttpGet("/project/workers")]
-        public ActionResult<Worker> GetAllWorkers()
+        [HttpGet("/project/workers/{projectId}")]
+        public ActionResult<List<Worker>> GetAllWorkers(int projectId)
         {
-            return null;
+            WorkerRepository workerRepository=new WorkerRepository();
+            return workerRepository.GetWorkersByProject(projectId);
+        }
+        
+        [HttpGet("/project/worker/{workerId}")]
+        public ActionResult<Worker> GetAllWorker(int workerId)
+        {
+            WorkerRepository workerRepository=new WorkerRepository();
+            return workerRepository.GetWorkersById(workerId);
         }
         
         [HttpGet("/project/status")]

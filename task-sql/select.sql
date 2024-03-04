@@ -71,35 +71,57 @@ end
     Otcheti
  */
 
-select SUM(t.work_time) as task_worked_time from Task t
-    inner join Project p on t.project=p.id
-where p.id=1;
+select SUM(t.work_time) as task_worked_time
+from Task t
+         inner join Project p on t.project = p.id
+where p.id = 1;
 
 
-select (SUM(t.work_time)/COUNT(t.id)) as avarage_task_worked_time from Task_history th
-    inner join Task t on t.id=th.task
-    inner join Project p on t.project=p.id
-where th.worker=1
-and history_status!=0;
+select (SUM(t.work_time) / COUNT(t.id)) as avarage_task_worked_time
+from Task_history th
+         inner join Task t on t.id = th.task
+         inner join Project p on t.project = p.id
+where th.worker = 1
+  and history_status != 0;
 
-select count(t.id) as all_sub_tasks from Sub_task st
-inner join Task t on t.id=st.id_sub_task
-where st.id_master_task=1;
+select count(t.id) as all_sub_tasks
+from Sub_task st
+         inner join Task t on t.id = st.id_sub_task
+where st.id_master_task = 1;
 /*
     Repository selects
  */
-select * from Status
+select *
+from Status
 
 Select t.name as taskName, t.due as taskDueDate, w.name as workerName, s.name as taskStatus
-from  Task t
+from Task t
          inner join Task_history th on th.task = t.id
          left join Worker w on w.id = th.worker
          inner join Status s on s.id = th.status
-where t.project=1 and th.status != 4
+where t.project = 1
+  and th.status != 4
 
-SELECT p.id,p.name,p.manager from Project p
-where p.id=1;
+SELECT p.id, p.name, p.manager
+from Project p
+where p.id = 1;
 
-SELECT p.id,p.name,p.manager from Project p
-        join Worker_projects wp on wp.id_project=p.id
-where wp.id_worker=1
+SELECT p.id, p.name, p.manager
+from Project p
+         join Worker_projects wp on wp.id_project = p.id
+where wp.id_worker = 1
+
+select w.id ,w.name, p.name as position, d.name as department
+from Worker w
+         inner join Worker_projects wp on wp.id_worker = w.id
+         inner join Department d on d.id = w.department
+         inner join Position p on p.id = w.position
+where wp.id_project = 1
+
+select w.id ,w.name, p.name as position, d.name as department
+from Worker w
+        inner join Department d on d.id = w.department
+         inner join Position p on p.id = w.position
+where w.id=1
+
+select * from Worker

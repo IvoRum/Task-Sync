@@ -47,4 +47,77 @@ public class WorkerRepository
         }
         return foundStatus;
     }
+    
+    public List<Worker> GetWorkersByProject(int projectId)
+    {
+        List<Worker> foundWorker = new List<Worker>();
+        SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder();
+        
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                String sql = "select w.id ,w.name, p.name as position, d.name as department " +
+                             "from Worker w " +
+                             "         inner join Worker_projects wp on wp.id_worker = w.id " +
+                             "         inner join Department d on d.id = w.department " +
+                             "         inner join Position p on p.id = w.position " +
+                             "where wp.id_project = "+projectId;
+                connection.Open();
+                using (SqlCommand sqlcommand = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = sqlcommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["name"].ToString();
+                            string department = reader["department"].ToString();
+                            string possition = reader["possition"].ToString();
+
+                            foundWorker.Add(new Worker(name,department,possition));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+        }
+        return foundWorker;
+    }
+    
+    public Worker GetWorkersById(int workerId)
+    {
+        SqlConnectionStringBuilder conn = new SqlConnectionStringBuilder();
+        
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                String sql = "select w.id ,w.name, p.name as position, d.name as department " +
+                             "from Worker w " +
+                             "        inner join Department d on d.id = w.department " +
+                             "         inner join Position p on p.id = w.position " +
+                             "where w.id= "+workerId;
+                connection.Open();
+                using (SqlCommand sqlcommand = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = sqlcommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["name"].ToString();
+                            string department = reader["department"].ToString();
+                            string possition = reader["possition"].ToString();
+
+                            return new Worker(name,department,possition);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            { }
+        }
+
+        return null;
+    }
 }
