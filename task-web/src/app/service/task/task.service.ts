@@ -22,8 +22,6 @@ export class TaskService {
   }
 
   fetchTask(taskId: number): Observable<TaskDTO> {
-    return this.http.get<TaskDTO>(
-      `https://localhost:7012/Task/unfinished_sub_tasl/` + taskId
-    );
+    return this.http.get<TaskDTO>(`https://localhost:7012/Task/` + taskId);
   }
 }

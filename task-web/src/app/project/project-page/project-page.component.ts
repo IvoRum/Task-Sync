@@ -52,8 +52,5 @@ export class ProjectPageComponent {
     this.taskService.fetchTask(taskId).subscribe((data: TaskDTO) => {
       this.task = data;
     });
-    console.log(taskId);
-    console.log('klickm');
-    console.log(this.task);
   }
 }
