@@ -15,5 +15,12 @@ namespace task_server.Controller
             ProjectRepository workerRepository=new ProjectRepository() ;
             return workerRepository.GetWorkersProjects(workerId);
         }
+        
+        [HttpGet("/project/status")]
+        public ActionResult<List<String>> GetStatus()
+        {
+            WorkerRepository workerRepository=new WorkerRepository();
+            return workerRepository.GetStatus();
+        }
     }
 }

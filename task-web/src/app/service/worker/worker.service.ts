@@ -15,7 +15,7 @@ export class WorkerService {
     );
   }
 
-  fetchAllWorker(workerId: number): Observable<WorkerDTO> {
+  fetchAllWorker(workerId: string | null): Observable<WorkerDTO> {
     return this.http.get<WorkerDTO>(
       `https://localhost:7012/worker/` + workerId
     );
