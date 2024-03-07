@@ -1,6 +1,6 @@
 CREATE DATABASE TASK_SYNC;
 CREATE TABLE Status(
-                         id BIGINT NOT NULL,
+                        id BIGINT NOT NULL,
                          name BIGINT NOT NULL
 );
 ALTER TABLE
