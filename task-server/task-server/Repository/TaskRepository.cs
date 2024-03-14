@@ -135,4 +135,35 @@ public class TaskRepository
 
         return null;
     }
+    
+    
+    public long GetTasksNewId()
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            try
+            {
+                String sql =
+                    "select TOP 1 t.id from Task t order by t.id desc;";
+                connection.Open();
+                using (SqlCommand sqlcommand = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = sqlcommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            long id=reader.GetInt64(reader.GetOrdinal("id"));
+
+                            return id + 1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+        }
+        return 0;
+    }
 }

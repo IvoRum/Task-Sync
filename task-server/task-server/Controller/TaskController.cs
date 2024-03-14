@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using task_server.Model;
 using task_server.Repository;
+using task_server.Service;
 
 namespace task_server.Controller
 {
@@ -28,6 +29,12 @@ namespace task_server.Controller
         {
             TaskRepository workerRepository=new TaskRepository() ;
             return workerRepository.GetTasksById(taskId);
+        }
+        [HttpGet("/Task/blank/{workerName}/{status}")]
+        public ActionResult<TaskDTO> GetTaskBlank(string workerName,string status)
+        {
+            TaskBuilder blankTask=new BlankTask() ;
+            return blankTask.CreteTaskDto(workerName,status);
         }
     }
 }
