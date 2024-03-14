@@ -1,0 +1,36 @@
+<div
+  class="project"
+  fxLayout="row wrap"
+  fxLayoutAlign="center"
+  fxLayoutGap.xs="0"
+>
+  <div class="project_base tasks" fxFlex="45%">
+    <h2>Tasks</h2>
+    <div *ngFor="let taskss of projectTasks" class="task">
+      <div (click)="onTaskUpdate(taskss.id)">
+        <h3>{{ taskss.taskName }}</h3>
+        <a> {{ taskss.due }}</a>
+        {{ taskss.taskStatus }}
+        {{ taskss.workerName }}
+      </div>
+    </div>
+  </div>
+  <div class="project_base worker_profile" fxFlex="45%">
+    <h2>Profile</h2>
+    {{ worker.id }} {{ worker.name }} {{ worker.department }}
+    {{ worker.possition }}
+  </div>
+  <div class="project_base taks_details" fxFlex="45%">
+    <h2>Task</h2>
+    <div *ngIf="task" class="task_details">
+      {{ task.id }} {{ task.taskName }} {{ task.taskStatus }}
+      {{ task.workerName }}
+    </div>
+  </div>
+  <div class="project_base coweokers" fxFlex="45%">
+    <h2>Coworkers</h2>
+    <div *ngFor="let coworker of coworkers">
+      {{ coworker.name }} {{ coworker.department }} {{ coworker.possition }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("/assets/fonts/Quicksand-Medium.ttf") format("truetype");
+}
+
+.project_base {
+  background-color: white;
+  padding: 2%;
+}
+
+.project {
+  width: 100%;
+  height: 100%;
+  font-family: "Quicksand";
+  background-color: #cecece;
+}
+
+.tasks {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 500px;
+  padding: 2%;
+}
+
+.worker_profile {
+}
+
+.coweokers {
+}
+
+.task {
+  background-color: #6593a6;
+  padding: 0.5em;
+
+  margin: 2px;
+}
+
+.taks_details {
+}

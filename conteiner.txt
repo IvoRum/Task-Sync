@@ -2,4 +2,11 @@ Create a Docker container for SQL Server
 
 
 Windows:
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Adam123456" -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Ivo123456" -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+
+docker run --rm -it --name temp-container alpine sh -c 'apk add --no-cache icu-libs && export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false'
+&& -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Ivo123456" -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+
+docker run -e "ACCEPT_EULA=Y"   -e "MSSQL_SA_PASSWORD=Ivo123456" -e DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false -p 1401:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest 
+
+docker build -t your_image_name . run -d --name your_container_name your_image_name 

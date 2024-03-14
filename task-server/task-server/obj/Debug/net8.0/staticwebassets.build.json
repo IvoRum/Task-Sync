@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "n37qKqxk3STwuGhvEhEVVKq49xzI3267Gdr4Ntbmdgk=",
+  "Source": "task-server",
+  "BasePath": "_content/task-server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
