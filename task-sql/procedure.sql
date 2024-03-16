@@ -64,28 +64,28 @@ exec getAllTasksInaProject 1;
 /*
     Rollback Procedure
  */
-create procedure rollbackIfSubtaskIsNotFnished(@masterTaskId as INT)
+    create procedure rollbackIfSubtaskIsNotFnished(@masterTaskId as INT)
     as
-begin
-                        DECLARE
-@subtasks DECIMAL
+    begin
+        DECLARE
+            @subtasks DECIMAL
 
-Select @subtasks = count(t.id)
-from Sub_task st
-         inner join Task t on st.id_sub_task = t.id
-         inner join Task_history th on th.task = t.id
-         left join Worker w on w.id = th.worker
-         inner join Status s on s.id = th.status
-where st.id_master_task = @masterTaskId
-  and th.status != 4
+        Select @subtasks = count(t.id)
+        from Sub_task st
+                 inner join Task t on st.id_sub_task = t.id
+                 inner join Task_history th on th.task = t.id
+                 left join Worker w on w.id = th.worker
+                 inner join Status s on s.id = th.status
+        where st.id_master_task = @masterTaskId
+          and th.status != 4
 
-                        IF @subtasks > 0
-BEGIN
-                                RAISERROR
-('All sub tasks must be finished before closing ticket.', 16, 1)
-                                ROLLBACK TRANSACTION
-END
-end;
+        IF @subtasks > 0
+            BEGIN
+                RAISERROR
+                    ('All sub tasks must be finished before closing ticket.', 16, 1)
+                ROLLBACK TRANSACTION
+            END
+    end;
 
 /*
                     View Procedure

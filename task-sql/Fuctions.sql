@@ -1,4 +1,3 @@
-
 CREATE FUNCTION WorkersOnProject(@workerName as VARCHAR(100))
     RETURNS table
         AS
