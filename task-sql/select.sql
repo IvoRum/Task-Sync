@@ -132,7 +132,7 @@ from Worker
     View select
  */
 
-select *
+select t.name,t.work_time,t.due,w.name
 from Task t
          join Task_history th on t.id = th.task
          join Worker w on th.worker = w.id
