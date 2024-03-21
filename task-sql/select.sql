@@ -9,7 +9,7 @@ from Sub_task st
          left join Worker w on w.id = th.worker
          inner join Status s on s.id = th.status
 where st.id_master_task = 1
-  and th.status != 4
+  and th.status != 4;
 
 /*
     Get All unfinished tasks just number
@@ -111,17 +111,31 @@ from Project p
          join Worker_projects wp on wp.id_project = p.id
 where wp.id_worker = 1
 
-select w.id ,w.name, p.name as position, d.name as department
+select w.id, w.name, p.name as position, d.name as department
 from Worker w
          inner join Worker_projects wp on wp.id_worker = w.id
          inner join Department d on d.id = w.department
          inner join Position p on p.id = w.position
 where wp.id_project = 2
 
-select w.id ,w.name, p.name as position, d.name as department
+select w.id, w.name, p.name as position, d.name as department
 from Worker w
-        inner join Department d on d.id = w.department
+         inner join Department d on d.id = w.department
          inner join Position p on p.id = w.position
-where w.id=1
+where w.id = 1
 
-select * from Worker
+select *
+from Worker
+
+
+/*
+    View select
+ */
+
+select t.name,t.work_time,t.due,w.name
+from Task t
+         join Task_history th on t.id = th.task
+         join Worker w on th.worker = w.id
+         join Worker_projects wp on wp.id_worker = w.id
+where wp.id_project = 1
+

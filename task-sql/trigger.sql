@@ -1,36 +1,42 @@
 CREATE TRIGGER areAllSubTasksClosed
     ON Task_history
-    after UPDATE
+    after
+UPDATE
     AS
 begin
-    if UPDATE(status)
-        begin
-            DECLARE @masterTask DECIMAL;
+    if
+UPDATE (status)
+begin
+            DECLARE
+@masterTask DECIMAL;
 
-            select @masterTask = id
-            from inserted;
+select @masterTask = id
+from inserted;
 
-            exec rollbackIfSubtaskIsNotFnished @masterTask;
-
-
-            DECLARE @startDate DATE;
-
-            Select top 1 @startDate = CONVERT(date, th.time_stamp)
-            from Task_history th
-            where th.task = @masterTask
-            order by th.time_stamp asc;
-
-            DECLARE @NumberOfDays INT;
-            SET @NumberOfDays = DATEDIFF(DAY, @startDate, GETDATE());
+exec rollbackIfSubtaskIsNotFnished @masterTask;
 
 
-            UPDATE Task
-            set work_time=@NumberOfDays
-            from task t
-                     inner join Task_history th on th.task = t.id
-            where t.id = @masterTask
-              and th.status = 4;
-        end;
+            DECLARE
+@startDate DATE;
+
+Select top 1 @startDate = CONVERT(date, th.time_stamp)
+from Task_history th
+where th.task = @masterTask
+order by th.time_stamp asc;
+
+DECLARE
+@NumberOfDays INT;
+            SET
+@NumberOfDays = DATEDIFF(DAY, @startDate, GETDATE());
+
+
+UPDATE Task
+set work_time=@NumberOfDays from task t
+                     inner join Task_history th
+on th.task = t.id
+where t.id = @masterTask
+  and th.status = 4;
+end;
 end;
 
     drop trigger areAllSubTasksClosed;
