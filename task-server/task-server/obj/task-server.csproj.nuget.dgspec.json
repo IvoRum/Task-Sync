@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\task-server.csproj": {}
+    "D:\\2_Code\\Task-Sync\\task-server\\task-server\\task-server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\task-server.csproj": {
+    "D:\\2_Code\\Task-Sync\\task-server\\task-server\\task-server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\task-server.csproj",
+        "projectUniqueName": "D:\\2_Code\\Task-Sync\\task-server\\task-server\\task-server.csproj",
         "projectName": "task-server",
-        "projectPath": "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\task-server.csproj",
+        "projectPath": "D:\\2_Code\\Task-Sync\\task-server\\task-server\\task-server.csproj",
         "packagesPath": "C:\\Users\\ivail\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\obj\\",
+        "outputPath": "D:\\2_Code\\Task-Sync\\task-server\\task-server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ivail\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -104,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\ivail\\.dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

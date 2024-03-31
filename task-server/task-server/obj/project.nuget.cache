@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YBcvA9VEHPtrALUaiVGh4TYNwTUDB/9KLyxsfwgcO1/ueEame1D1nlX7ZgSwv3Tby37pu1JOd7nia/ekLtbfGQ==",
+  "dgSpecHash": "+/oVlv5EOvzE3GH+pzNaF8eibXj0qQXzZfDln471y4+Z1kLK0SgQW/iywcnNzgdOAN5SAqfMv2K7SEjOflr/WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ivail\\_Spring\\Task-Sync\\task-server\\task-server\\task-server.csproj",
+  "projectFilePath": "D:\\2_Code\\Task-Sync\\task-server\\task-server\\task-server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ivail\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ivail\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
