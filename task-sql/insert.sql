@@ -312,7 +312,8 @@ end;
                             VALUES (@histiD, @taskId, @taskStatus, @workerId, @managerId, 1);
                         end;
 
-                            create procedure createSubTask(@taskId as INT, @masterTaskId as INT, @taskName as VARCHAR, @projectId as INT,
+                            create procedure createSubTask(@taskId as INT, @masterTaskId as INT, @taskName as VARCHAR,
+                                                           @projectId as INT,
                                                            @taskDue as DATETIME) as
                             begin
                                 INSERT INTO Task(id, name, work_time, project, due)
