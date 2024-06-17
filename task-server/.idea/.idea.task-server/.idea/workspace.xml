@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="014b4bdd-16c9-499d-b367-413e6e5929c5" name="Changes" comment="" />
+    <list default="true" id="014b4bdd-16c9-499d-b367-413e6e5929c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/task-server.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/Debug/net8.0/task-server.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task-server/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/task-server/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sql/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sql/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sql/select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sql/select.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,9 +39,10 @@
     <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2e01E7SuMAPQMXj9Jpvu6aJcNuK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,6 +52,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,12 +124,14 @@
       <option name="presentableId" value="Default" />
       <updated>1711026571439</updated>
       <workItem from="1711026576496" duration="1374000" />
+      <workItem from="1712233133213" duration="730000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

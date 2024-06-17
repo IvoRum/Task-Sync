@@ -1,7 +1,8 @@
 /*
     Get All unfinished tasks
 */
-
+create procedure selectAllUnfinishedSubTasks(@masterTastId as INT) as
+begin
 Select t.name as taskName, t.due as taskDueDate, w.name as workerName, s.name as taskStatus
 from Sub_task st
          inner join Task t on st.id_sub_task = t.id
@@ -10,6 +11,7 @@ from Sub_task st
          inner join Status s on s.id = th.status
 where st.id_master_task = 1
   and th.status != 4;
+end;
 
 /*
     Get All unfinished tasks just number
@@ -39,12 +41,14 @@ where pj.id = 1
 /*
     Get task start date
 */
-
+create procedure selectAll(@tastId as INT) as
+begin
 Select top 1 CONVERT(date, th.time_stamp)
                  as taskCreationDate
 from Task_history th
-where th.task = 1
+where th.task = @tastId
 order by th.time_stamp asc;
+end;
 
 Select top 1 CONVERT(date, th.time_stamp)
 from Task_history th

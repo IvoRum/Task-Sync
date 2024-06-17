@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7afb7a2a-d4aa-4849-b0bf-bf2d010c03ee" name="Changes" comment="" />
+    <list default="true" id="7afb7a2a-d4aa-4849-b0bf-bf2d010c03ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024___15_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024___15_16__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024___15_16__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024___15_16__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/project.nuget.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/shelf/Uncommitted_changes_before_Checkout_at_21_3_2024_г__15_16_[Changes]1/task-server.AssemblyInfoInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/.idea/.idea.task-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/Debug/net8.0/task-server.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-server/task-server/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../task-server/task-server/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procedure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/procedure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/select.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trigger.sql" beforeDir="false" afterPath="$PROJECT_DIR$/trigger.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +43,7 @@
     &quot;RunOnceActivity.OpenDatabaseViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;db__dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ivail/_Spring/Task-Sync/task-sql&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;
   },
